@@ -44,24 +44,24 @@ float timeCount = 0;
 void loop() { //its like the main function
 	timeCount += 1;
 
-	if (timeCount <  2) {
+	if (timeCount < 2) {
 		drawScreen(ALL);
 	} else if (timeCount <  1000) {
-		drawScreen(B);
-	} else if (timeCount <  2000) {
-		drawScreen(C);
-	} else if (timeCount <  3000) {
-		drawScreen(D);
-	} else if (timeCount <  4000) {
-		drawScreen(G);
-	} else if (timeCount <  5000) {
 		drawScreen(H);
-	} else if (timeCount <  6000) {
+	} else if (timeCount <  2000) {
+		drawScreen(E);
+	} else if (timeCount <  3000) {
+		drawScreen(L);
+	} else if (timeCount <  4000) {
+		drawScreen(L);
+	} else if (timeCount <  5000) {
 		drawScreen(O);
+	} else if (timeCount <  6000) {
+		drawScreen(EX);
 	} else if (timeCount <  7000) {
-		drawScreen(Z);
-	} else if (timeCount <  8000) {
 		drawScreen(ALL);
+	} else if (timeCount <  8000) {
+		drawScreen(RESET);
 	} else {
 		// back to the start
 		timeCount = 0;
@@ -73,8 +73,8 @@ const byte col[] = {10, 11, 12, 13, A0, A1, A2, A3};
 
 void drawScreen(byte buffer2[]) {
 	// Turn on each row in series
-	for (byte i = 0; i < 8; i++) {       // count next row 
-		digitalWrite(rows[i], HIGH);       // initiate whole row
+	for (byte i = 0; i < 8; i++) { // count next row 
+		digitalWrite(rows[i], HIGH); // initiate whole row
 		digitalWrite(col[0], HIGH);
 		digitalWrite(col[1], HIGH);
 		digitalWrite(col[2], HIGH);
@@ -84,7 +84,7 @@ void drawScreen(byte buffer2[]) {
 		digitalWrite(col[6], HIGH);
 		digitalWrite(col[7], HIGH);
 
-		for (byte a = 0; a < 8; a++) {     // count next row
+		for (byte a = 0; a < 8; a++) { // count next row
 			digitalWrite(col[a], !((buffer2[i] << a) & 0x80));
 		}
 		
