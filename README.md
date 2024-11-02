@@ -6,6 +6,7 @@
 Resources:
 - https://www.arduino.cc/reference/en/
 - https://fritzing.org/ -> Circuit designer (the most used apparently), open-source
+- https://randomnerdtutorials.com/ -> a lot of cool Arduino & Raspberry Pi projects here
 
 ## 1_8x8_led_matrix_simple_letter_prints
 Prints letters to the matrix of LEDs. Made in 2019
